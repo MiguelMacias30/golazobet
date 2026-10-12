@@ -46,16 +46,3 @@ Abrir http://localhost:3000. La base de datos JSON se crea automáticamente en `
 4. Configurar `DATA_FILE` en una ruta de almacenamiento persistente. **Sin disco persistente los datos se perderán tras reinicios o despliegues.**
 5. Crear la primera cuenta administradora antes de difundir la URL.
 6. Verificar registro, login, creación de evento, pronóstico, liquidación y consulta de historial.
-
-**Limitaciones:** persistencia JSON local apropiada para demostración académica con bajo tráfico; no usar como sistema real de apuestas. Para producción se recomienda PostgreSQL, control de concurrencia, rate limiting, HTTPS, auditoría y pruebas de seguridad. La publicación pública todavía no está realizada ni verificada.
-
-## Subir al repositorio
-
-```bash
-git init
-git branch -M main
-git add .
-git commit -m "feat: GolazoBet academic MVP"
-git remote add origin https://github.com/MiguelMacias30/golazobet.git
-git push -u origin main
-```
