@@ -3,8 +3,6 @@
 
 MVP académico de pronósticos deportivos con **créditos exclusivamente virtuales**. No procesa pagos ni apuestas con dinero real.
 
-Proyecto desarrollado para el módulo **Énfasis Profesional I (Integración Continua)** del Politécnico Grancolombiano.
-
 ## Descripción del proyecto
 
 GolazoBet es una aplicación web que permite a los usuarios consultar eventos deportivos, realizar pronósticos utilizando créditos virtuales y consultar sus resultados.
