@@ -1,0 +1,30 @@
+services:
+  golazobet:
+    build: .
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATA_FILE: /app/data/db.json
+      SESSION_SECRET: ${SESSION_SECRET:?Define SESSION_SECRET}
+    volumes:
+      - golazobet_data:/app/data
+    networks:
+      - golazobet_network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - golazobet
+    networks:
+      - golazobet_network
+
+volumes:
+  golazobet_data:
+
+networks:
+  golazobet_network:
+    driver: bridge
