@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'npm --version'
+                sh 'docker version'
             }
         }
 
@@ -26,14 +27,21 @@ pipeline {
                 sh 'npm test'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t golazobet:latest .'
+            }
+        }
     }
 
     post {
         success {
-            echo 'GolazoBet CI: Pipeline completado correctamente.'
+            echo 'GolazoBet CI: pruebas y construcción Docker completadas correctamente.'
         }
         failure {
-            echo 'GolazoBet CI: La ejecución presentó errores.'
+            echo 'GolazoBet CI: la ejecución presentó errores.'
         }
     }
 }
+
